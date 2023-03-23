@@ -1,0 +1,14 @@
+package Enums;
+
+public enum Cuisine {
+	INDIAN,
+	AMERICAN,
+	PAKISTANI,
+	ITALIAN,
+	OCEANIC,
+	JAPANESE,
+	ENGLISH,
+	THAI,
+	SNACKS,
+	MULTICUISINE
+}

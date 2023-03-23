@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Admin</title>
+  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- <script src="https://cdn.lordicon.com/ritcuqlt.js"></script> -->
+  <link href="Admin.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="leftNavBar">
+  
+
+    <button class="classForButton" onclick="hideAndShow('addDelBoy')">
+      <h1 class="classForH1">Add Delivery Boy</h1>
+      <lord-icon src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" style="width:5vh;height:5vh">
+      </lord-icon>
+    </button>
+
+    <button class="classForButton" onclick="hideAndShow('viewCustomer');show_Customer_Details()">
+      <h1 class="classForH1">View Customers</h1>
+      <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="hover" style="width:5vh;height:5vh">
+    </button>
+<!-- 
+    <button class="classForButton" onclick="hideAndShow('viewCustomerDetails')">
+      <h1 class="classForH1">Customer History</h1>
+      <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover" style="width:5vh;height:5vh">
+      </lord-icon>
+    </button> -->
+
+    <button class="classForButton" onclick="hideAndShow('addHotel');" >
+      <h1 class="classForH1">Add Hotels</h1>
+      <lord-icon src="https://cdn.lordicon.com/jqnthkou.json" trigger="hover" style="width:5vh;height:5vh">
+      </lord-icon>
+    </button>
+
+    <button class="classForButton" onclick="hideAndShow('viewDel');show_Delivery_Boy_Details()">
+      <h1 class="classForH1">Delivery Boy Details</h1>
+      <lord-icon src="https://cdn.lordicon.com/bbnkwdur.json" trigger="morph" style="width:5vh;height:5vh">
+      </lord-icon>
+    </button>
+    
+  </div>
+  <div id="mainBox">
+    <div id="titleBar">
+      <div id="zomatoTitle">
+        <img id="titleImg" src="zomotoLogo.png" />
+          <!-- Sort By Location : <select name="" id=""><option value=""></option></select> -->
+        <lord-icon onclick="showLogOut()" src="https://cdn.lordicon.com/hwuyodym.json" trigger="hover"
+          style="width:5vh;height:5vh;margin-left: 48vh;margin-right: 5vh;">
+        </lord-icon>
+
+        <div id="logoutShow" onclick="logout()">
+          <p style="text-align: center;font-size:20px;cursor:pointer">Log out</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Start Main Content div of Admin Page -->
+    <div id="mainBody">
+
+      <!-- For Adding Delivery Boy -->
+      <div id="addDelBoy" class ="showAndHide">
+          <h1 class="headingForAll">Add Delivery Boy</h1>
+
+          <input type="text" id = "delName" class="delBoySty" placeholder="Delivery Boy Name">
+          <input type="text" id = "delNum" class="delBoySty" placeholder="Delivery Boy Number">
+          <input type="text" id = "delLoc" class="delBoySty" placeholder="Delivery Boy Location"><br><br>
+
+          <button id="addDelBoyFun" class="buttonSty" onclick="addDelBoys()">ADD DELIVERY BOY</button>
+          <h1 id = "otDel" style="text-align: center;"></h1>
+      </div>
+
+      <!--View All Customer--> 
+      <div id="viewCustomer" class ="showAndHide">    
+      </div>
+
+      <!-- View Customer History -->
+      <!-- <div id="viewCustomerDetails" class ="showAndHide">
+        <h1>View Cutomer Details</h1>
+
+      </div> -->
+
+      <!-- Delivery Boy Details -->
+
+      <div id="viewDel" class ="showAndHide">
+
+  
+        </div>
+
+      <!-- Add Hotel -->
+
+      <div id="addHotel" class ="showAndHide">
+
+        <div class="header">
+          <h1 class="headerTitle">Add Your Hotel</h1>
+        </div>
+
+        <div id="addHotelMain">
+          <!-- <span class="nam">Enter Hotel Name : </span> -->
+          <input type="text" class="inpForDetails" id="hotelName" placeholder="Enter hotel Name" >
+          <input type="text" class="inpForDetails" id="hotelLocation" placeholder="Enter hotel Location">
+          <input type="text" class="inpForDetails" id="hotelAddress" placeholder="Enter hotel Address">
+          <input type="text" class="inpForDetails" id="averagePrice" placeholder="Average Price For 2 Person">
+          <input type="text" class="inpForDetails" id="description" placeholder="Description About Hotel">
+
+          <select id="cuisine">
+
+            <option value="" disabled selected>Select Your Cuisine</option>
+            <option value="INDIAN">INDIAN</option>
+            <option value="AMERICAN">AMERICAN</option>
+            <option value="PAKISTANI">PAKISTANI</option>
+            <option value="ITALIAN">ITALIAN</option>
+            <option value="OCEANIC">OCEANIC</option>
+            <option value="JAPANESE">JAPANESE</option>
+            <option value="ENGLISH">ENGLISH</option>
+            <option value="THAI">THAI</option>
+            <option value="SNACKS">SNACK BAR</option>
+            <option value="MULTICUISINE">MULTI CUISINE</option>
+            
+          </select>
+          
+          <input type="text" class="inpForDetails" id="foodItemCount" placeholder="Food Item Count"><button id="submitItemCount" onclick="createFoodNameInputBox()">SUBMIT</button>
+          <div id = "foodNameAndPrice"></div>
+
+          <button id="submitAddHotel" onclick="addHotel()">Add Hotel</button>
+
+          <h1 id="ot"></h1>
+
+        </div>
+            <!-- <div style="width:100px;height:100px;border:solid black 1px"></div> -->
+            
+        </div>
+
+    </div>
+    <!-- End of Main Content div of Admin Page -->
+
+
+
+  </div>
+  <script src="Admin.js"></script>
+</body>
+
+</html>
+
+
+      <!-- <div style="width:100%;height:70px;position: fixed;background-color: white">
+          <h1 class="headingForAll" style="font-size:50px;font-weight:700;margin: auto;text-align: center;position: fixed;width: 73%;">Customer Details</h1>
+        </div> -->
+        <!-- TODO The below div is to be created in js -->
+         <!-- <div class="cusDe"> -->
+          
+          <!-- </div>  -->
+        <!-- TODO The above div is to be created in js -->

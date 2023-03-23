@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign_Login</title>
+<link rel="stylesheet" href="Sigin_Login.css">
+</head>
+<body>
+
+	<script>
+		
+			var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText);
+                    if(xhr.responseText == "Admin Login"){
+                         window.location.href = "Admin.html";
+                         return;
+                    }
+                     if(xhr.responseText == "User Login"){
+                        window.location.href = "UserMain.html";
+                        return;
+                    }
+                    if(xhr.responseText == "user Not found"){
+                        return;
+                    }
+
+                }
+            }
+            xhr.open("POST","zomato/CookieCheck")
+            xhr.send();
+		
+	</script>
+
+    <div id="root">
+
+        <div id="signin">
+            <h1 id = "title">User Login</h1>
+
+            <input type="text" id="phoneNumber" placeholder="Phone Number" class="sty"><br><br><br>
+            <input type="password" id="password" placeholder="Password" class="sty2"><button class="show" id="passLogin"></button><br><br><br>
+            <button id="loginSubmit" class="but" onclick="login()">Submit</button><br><br>
+            Don't have account<span onclick="changePage()"> sign-up</span>
+            <h3 id="output2"></h3>
+           
+        </div>
+
+    </div>
+
+
+    <div id="root2">
+
+        <div id="signUp">
+
+            <h1 id="title2">Sign-Up</h1>
+            
+            <input type="text" id="nameForSignup" placeholder="Name" class="st"><br><br><br>
+            <input type="text" id="phoneNumberForSignup" placeholder="Phone Number" class="st"><br><br><br>
+            <input type="password" id="passwordForSignup" placeholder="Password" class="st2"><button class="show" id="passSign"></button><br><br><br>
+            <input type="text" id="locationForSignup" placeholder="Location" class="st"><br><br><br>
+            
+        </div>
+
+        <button id="signUpSubmit" class="but">Submit</button><br><br>
+
+        Already have account? <span onclick="changePage()">Login</span>
+        <h3 id="output"></h3>
+    </div>
+
+<script src = "Signin_Login.js"></script>
+</body>
+</html>

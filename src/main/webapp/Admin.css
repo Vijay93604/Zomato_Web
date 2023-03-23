@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  /* background-color: black;
+  color:white; */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#leftNavBar{
+    position: sticky;
+    width: 25%;
+    height: 100%;
+    /* background-color: #F7F8FD; */
+    background-color: #F45050;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+#mainBox{
+  width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#titleBar{
+    position: fixed;
+    width: 75%;
+    height: 15%;
+    background-color: white;
+    transform: translate(0vh, -43vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+#zomatoTitle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+#titleImg{
+    /* height: 10vh;
+    width: 20vh; */
+    height: 300px;
+    width: 550px;
+    margin-right: -160px;
+}
+#mainBody{
+    width: 100%;
+    margin-top: 14.5vh;
+    height: 85.5%;
+    overflow-y: scroll;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transition: all 0.3s ease-out;
+  color: #888;
+  pointer-events: none;
+}
+
+/* input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #808080;F45050
+}
+
+input:focus {
+  outline: none;
+  border-color: #a6a6a6;
+  box-shadow: 0 0 5px #b3b3b3;
+} */
+
+.classForButton{
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+.classForH1{
+  width: 70%;
+  color: white;
+}
+
+#addDelBoy{
+  width:700px;
+  height:600px;
+  border:solid black 1px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+#viewCustomer{
+  width:100%;
+  height:900px;
+  overflow-y: scroll;
+  /* border:solid black 1px; */
+  /* margin-left: 100px; */
+}
+
+#viewDel{
+  width:100%;
+  height:900px;
+  overflow-y: scroll;
+  /* border:solid black 1px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+#viewCustomerDetails{
+  width:100%;
+  height:900px;
+  overflow-y: scroll;
+  border:solid black 1px;
+}
+#addHotel{
+  width:100%;
+  height:900px;
+  overflow-y: scroll;
+  border:solid black 1px;
+}
+
+.headingForAll{
+  text-align: center;
+  font-size: 40px;
+}
+
+.delBoySty{
+  width:400px;
+  height: 60px;
+  margin-top:50px;
+  margin-left: 140px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 5px;
+  
+}
+
+.buttonSty{
+  width: 350px;
+  height: 60px;
+  background-color: #F45050;
+  color: white;
+  font-size: 30px;
+  margin-left: 170px;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.cusDe{
+  width:50%;
+  height:300px;
+  /* border:solid black 1px; */
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+  transition: 1s;
+}
+.cusDe:hover{
+  width: 55%;
+  height: 350px;
+}
+.userDe{
+  width:50%;
+  height:60px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  /* border: solid black 1px; */
+}
+.details{
+  margin-left: 29px;
+  font-size: 30px;
+}
+
+#cusTitleDiv{
+  width:100%;
+  height:70px;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+}
+
+#cusTitle{
+  font-size:50px;
+  font-weight:700;
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  width: 73%;
+}
+
+.delDetailsparent{
+  width:60%;
+  height:500px;
+  /* border: solid black 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 80px;
+  padding-bottom: 30px;
+}
+
+.header{
+  width: 75%;
+  height: 70px;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+}
+
+.headerTitle{
+  font-size: 50px;
+  font-weight: 700;
+  background-color: white;
+  position: fixed;
+  width: 73%;
+  /* margin-left: 190px; */
+  text-align: center;
+}
+
+#logoutShow{
+  width:100px;
+  height:30px;
+  border: solid black 1px;
+  position: absolute;
+  top: 108px;
+  left:1310px;
+}
+
+#addHotelMain{
+  width:900px;
+  height:750px;
+  /* border: solid black 1px; */
+  position: relative;
+  margin:auto;
+  top:100px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 35px 26px rgba(0,0,0,0.1);
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.nam{
+  font-size: 30px;
+}
+
+.inpForDetails{
+  width:500px;
+  height:60px;
+  font-size: 35px;
+  text-align: center;
+  box-shadow: 0px 10px 55px 1px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+
+#cuisine{
+  width:300px;
+  height:50px;
+  margin-top:50px;
+  background-color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+#submitItemCount{
+  width:100px;
+  height:30px;
+  background-color: white;
+  margin-top:20px;
+  /* border: none; */
+}
+
+.foodName{
+  width:350px;
+  height:60px;
+  font-size: 25px;
+  text-align: center;
+  box-shadow: 0px 10px 55px 1px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+.main{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.foodPrice{
+  width:350px;
+  height:60px;
+  font-size: 25px;
+  text-align: center;
+  box-shadow: 0px 10px 55px 1px rgba(0,0,0,0.1);
+  margin-top: 10px;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#submitAddHotel{
+  width:250px;
+  height:70px;
+  background-color: #F45050;
+  color:white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#foodNameAndPrice{
+  width:100%;
+}
+
+#ot{
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>User Main Page</title>
+  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link id = "cssL" href="UserMain.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- <img src="zomatoLogo.png" alt=""> -->
+  
+
+<!-- Start of User Main Page -->
+  <div id="userFirstPage">
+
+    <div id="leftNavBar">
+
+
+
+      <button class="classForButton" onclick="hideAndShow('viewProfile');viewProfile()">
+        <h1 class="classForH1">View Profile</h1>
+        <lord-icon src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" style="width:5vh;height:5vh">
+        </lord-icon>
+      </button>
+
+      <button class="classForButton" onclick="hideAndShow('viewHistory');viewHistory();">
+        <h1 class="classForH1">View History</h1>
+        <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="hover" style="width:5vh;height:5vh">
+      </button>
+
+      <button class="classForButton"  onclick="hideAndShow('mainOrder');showHotels()">
+        <h1 class="classForH1">Order Food</h1>
+        <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="hover" style="width:5vh;height:5vh">
+      </button>
+
+    </div>
+    <div id="mainBox">
+      <!-- hello -->
+      <div id="titleBar">
+        <div id="zomatoTitle">
+          <img id="titleImg" src="zomotoLogo.png" />
+          <lord-icon onclick="showLogOut()" src="https://cdn.lordicon.com/hwuyodym.json" trigger="hover"
+            style="width:5vh;height:5vh;margin-left: 48vh;margin-right: 5vh;">
+          </lord-icon>
+        </div>
+        
+
+        <div id="logoutShow" onclick="logout()">
+          <p style="text-align: center;font-size:20px;cursor:pointer">Log out</p>
+        </div>
+      </div>
+
+      <!-- All content in User Main Page Like Resturant choose View Profile and View History -->
+      <div id="mainBody">
+ <!-- The Below div is for Order Food -->
+        <div  class="hideAndShow" id="mainOrder">
+
+          <label for="searchBox"></label>
+          <input type="text" id="searchBox" name="searchBox" placeholder="Search For Hotels"/>
+
+       
+          <div id="orderFood">
+            <div id="toAppend" class="hotelDisp"></div>
+           
+          </div>
+        
+
+        </div>
+<!-- End of order hide and show -->
+
+        <div class="hideAndShow" id="viewProfile">
+          <!-- Div for show profile -->
+
+          <h1 style="text-align: center;font-weight:700;padding-top:17px">My Profile</h1>
+
+          <div class="profileStyle">
+            <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="hover" style="width:80px;height:80px"></lord-icon><span id="userProfileName"></span>
+          </div>
+
+          <div class="profileStyle">
+          <lord-icon src="https://cdn.lordicon.com/fwafvpnq.json" trigger="hover" style="width:80px;height:80px"></lord-icon><span id="userProfileNumber"></span>
+          </div>
+
+          <div class="profileStyle">
+            <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="hover" style="width:80px;height:80px"></lord-icon><span id="userProfileLocation"></span>
+          </div>
+
+
+        </div>
+
+        <div class="hideAndShow" id="viewHistory">
+
+          <!-- TODO -->
+           <div class="historyHeader"><h1>Your History</h1></div>
+            <!-- TODO end -->
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+  
+  </div>
+<!-- TODO -->
+  
+  <!-- End of User Main Page-->
+  <!-- <button onclick="changeMainPage()">Click</button> -->
+
+  <!-- Start of Order Food Page -->
+<div id="OrderPage">
+
+  <header>
+
+    <div id="hotelDetails">
+      <!-- TODO Show Hotel Basic Details -->
+    
+          <div id="hotelDetailsContainer">
+
+              <div id="nameAndLocation">
+
+              <h1 id="hoName">Hotel Vijay</h1>
+              <div id="hoLocation">
+                  <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="hover" style="width:50px;height:50px"></lord-icon><p id="hotloca">Sivakasi</p>
+              </div>
+             
+            </div>
+            <!-- TODO  -->
+
+            <h4 id="hotAddress">4/1642 Hussian Coloney Sivakasi</h4>
+
+           <div id="hotStarContainer">
+              <lord-icon src="https://cdn.lordicon.com/mdgrhyca.json" trigger="morph" style="width:45px;height:45px"></lord-icon>
+              <p id="hotstar">3</p>
+           </div>
+
+           </div>
+
+    </div>
+    
+    <div id="flows">
+
+        <button class="classForButton2" style="border-left: 0.2vh solid #000000;" onclick="changePage()">
+          <h1 class="classForH12">Home</h1>
+          <lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" trigger="morph" style="width:5vh;height:5vh"></lord-icon>
+        </button>
+
+        <button class="classForButton2" style="border-left: 0.2vh solid #000000;" onclick="hideAndShowforOrderFood('viewRatings');showRatingsOfSelectedHotel()">
+          <h1 class="classForH12">View Ratings</h1>
+          <lord-icon src="https://cdn.lordicon.com/wxnxiano.json" trigger="morph" style="width:5vh;height:5vh"></lord-icon>
+        </button>
+
+        <button class="classForButton2" onclick="hideAndShowforOrderFood('orderfoodFromSelectedHotel');showFoodAndPriceForOrder()">
+          <h1 class="classForH12">Order</h1>
+          <lord-icon src="https://cdn.lordicon.com/uukerzzv.json" trigger="hover" style="width:5vh;height:5vh"></lord-icon> 
+        </button>
+
+        <button class="classForButton2" onclick="hideAndShowforOrderFood('addReview')">
+          <h1 class="classForH12">Add Review</h1> 
+          <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json" trigger="hover" style="width:5vh;height:5vh"></lord-icon>
+        </button>
+
+        <button class="classForButton2" style="border-right: 0.2vh solid #000000;" onclick="hideAndShowforOrderFood('showMenu')">
+          <h1 class="classForH12">Menu</h1>
+          <lord-icon src="https://cdn.lordicon.com/itmmouju.json" trigger="hover" style="width:5vh;height:5vh"></lord-icon> 
+        </button>
+
+    </div>
+</header>
+
+  <!-- Start of Main Content in Order Page -->
+  <div id="mainBody2">
+
+    <div id="showDeliveryBoyDetailsAfterOrdered">
+      <h1>Order Confirmed</h1>
+
+      <h1 id="byHeader">Delivered By</h1>
+        <div id="deliveryBoyDetails">
+          <!-- TODO add Delivey Boy Name -->
+          <h1 id="delName" class="align">Vijaya Kannan</h1>
+          <h1 id="delPhone" class="align">9360450375</h1>
+        </div>
+        <h1 style="color:#F45050;text-align: center;">Your order will be delivered within 1 hour</h1>
+        
+        <button id="lastOk" onclick="lastHomePage()">Ok</button>
+
+    </div>
+ 
+     <div id="confirmOrder">
+      <h1 onclick="confirmOrderForUser()" style="margin-left: 20px;cursor:pointer">X</h1>
+
+      <div id="orderDetails">
+
+        <div id="orderConfirmMenuHeader"><h1>Ordered Food</h1></div>
+
+          <div id="orderedFoodConfirmMenu"></div>
+
+        </div>
+      <br>
+      <h1 id="totalOrderAmount">Total Amount <span id="totalRupee">₹200</span></h1>
+
+        <h1 id="enterAddressPlaceHolder">Enter Address Below</h1>
+        
+      <textarea name="" id="addressToBeDelivered" cols="30" rows="10"></textarea>
+        <br>
+      <select id="selectPayment" onchange="choosePayment()">
+        <option value="default" selected disabled>Select Way Of Payment</option>
+        <option value="cashOnDelivery">Cash On Delivery</option>
+        <option value="upi">UPI</option>
+      </select>
+
+      <!-- creid card number -->
+
+      <!-- cvv -->
+
+      <div id="forUpi">
+        <input type="text" id="creditCardNumber" placeholder="Enter Credit Card Number">
+        <input type="text" id="cvvNumber" placeholder="Enter CVV">
+      </div>
+
+      <button id="confirmOrderButton" onclick="sendOrderDetailsToDb()">Confirm Order</button>
+
+    </div> 
+
+    <div class="hideAndShowForOrderFood" id="viewRatings">
+      <!-- TODO show ratings to selected Hotel -->
+
+        <div id="descOfSelectedHotel">
+          <!-- This div is to show desc of hotel -->
+          <h1 id="headerAbout">About Hotel</h1>
+          <br><br>
+            <p id="hotelDescp">Aasife is a popular hotel known for its delicious biryani. The interior is simple but elegant, and the hotel has a warm and welcoming ambiance. The star attraction of Aasife is its biryani, which is prepared with the finest quality basmati rice and aromatic spices.</p>
+        </div>
+        <br><br>
+        <hr>
+        <h1 id="headerCus">Customer Reviews</h1>
+
+        </div>
+
+        <!-- the below div is for order flow div open -->
+    <div class="hideAndShowForOrderFood" id="orderfoodFromSelectedHotel">
+      <!-- TODO order food flow -->
+      <!-- The below div is to show food and price -->
+      <div id="foodShow">
+        
+        <!-- <div class="mainFoodDetailsContainer">
+          <div class="foodNameAndPriceContainer">
+            <h1 class="fName">Chicken Biryani</h1>
+            <h1 class="fPrice">₹200</h1>
+          </div>
+         
+          <br><br>
+          <div class="addQuantityDetails">
+            <p class="addItem">+</p>
+            <p class="count">5</p>
+            <p class="minusCount">-</p>
+          </div>
+        </div> -->
+
+      </div>
+      <!-- The above /div is end of show food and price-->
+      
+      <!-- The below div is for cart  -->
+      <div id="cartContainer">
+
+      <div id="cartItems">
+        <div id="cartShowHeader"><h1>Cart</h1></div>
+      </div>
+      <!-- the above /div is close of cart  -->
+
+      <!-- The below div is for checkout button -->
+        <button id="checkOutOrderFood" onclick="confirmOrderForUser()">Check Out</button>
+      <!-- close of checkout button -->
+    </div>
+      
+    </div>
+    <!-- The above /div is the close for order food flow -->
+
+    <div class="hideAndShowForOrderFood" id="addReview">
+      <!-- TODO add review flow -->
+      <div class="headerOfAddReview">
+        <h1>Add Your Review</h1>
+     </div>
+      
+      
+        <textarea id="commentValue" cols="30" rows="10"></textarea>
+        <select id="starRatingByCustomer">
+          <option value="" disabled selected>Give Star Rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <br><br>
+         <button id="submitUserComment" onclick="addReview()">Add Comment</button>
+         <h1 id="updatedMessageForUser" style="padding-left:550px;padding-top:15px"></h1>
+    </div>
+
+    <div class="hideAndShowForOrderFood" id="showMenu">
+      <!-- TODO show menu of selected Hotel -->
+      <!-- <h1>Show Menu</h1> -->
+       <div id="menuDiv">
+        <!-- <div class="containers"><h1>Food Name</h1></div>
+        <div class="containers"><h1>Food Price</h1></div> -->
+       </div>
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+  <!-- End of Main Content in Order Page -->
+
+
+</div>
+<!-- End of Order Food Page Page -->
+
+
+  <script src="UserMain.js"></script>
+</body>
+
+</html>
